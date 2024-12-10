@@ -1,0 +1,125 @@
+Here’s a summarized list of the Tailwind CSS utilities used throughout the sections, with brief descriptions of each:
+
+### Layout Utilities:
+
+1. **`flex`**: 
+   - **Description**: Activates a flexbox container. Used for aligning child elements horizontally or vertically.
+   - **Example**: `flex`, `flex-col`, `flex-row`.
+
+2. **`space-x-{value}`** / **`space-y-{value}`**:
+   - **Description**: Adds horizontal or vertical spacing between child elements. The `{value}` is the spacing amount (e.g., `space-x-10`, `space-y-5`).
+   - **Example**: `space-x-10`, `space-y-5`.
+
+3. **`justify-center`** / **`justify-start`** / **`justify-between`**:
+   - **Description**: Aligns items horizontally within a flex container. `justify-center` centers the items, `justify-start` aligns them to the left, and `justify-between` spaces them evenly.
+   - **Example**: `justify-center`, `justify-start`, `justify-between`.
+
+4. **`items-center`**:
+   - **Description**: Vertically centers items within a flex container.
+   - **Example**: `items-center`.
+
+5. **`w-{value}`** / **`h-{value}`**:
+   - **Description**: Sets the width (`w-{value}`) and height (`h-{value}`) of an element. `{value}` can be a fixed size or a percentage (e.g., `w-full`, `h-64`).
+   - **Example**: `w-full`, `h-64`, `w-2/3`.
+
+6. **`max-w-full`**:
+   - **Description**: Ensures that the element's width is limited to the maximum width of its parent container.
+   - **Example**: `max-w-full`.
+
+### Spacing Utilities:
+
+7. **`p-{value}`** / **`px-{value}`** / **`py-{value}`**:
+   - **Description**: Adds padding to all sides (`p-{value}`), horizontal (`px-{value}`), or vertical (`py-{value}`) sides of an element.
+   - **Example**: `p-10`, `py-10`, `px-4`.
+
+8. **`m-{value}`** / **`my-{value}`** / **`mx-{value}`**:
+   - **Description**: Adds margin to all sides (`m-{value}`), vertical (`my-{value}`), or horizontal (`mx-{value}`) sides of an element.
+   - **Example**: `m-10`, `my-6`, `mx-10`.
+
+9. **`mt-{value}`** / **`mb-{value}`** / **`ml-{value}`** / **`mr-{value}`**:
+   - **Description**: Adds specific margin to top (`mt-{value}`), bottom (`mb-{value}`), left (`ml-{value}`), or right (`mr-{value}`).
+   - **Example**: `mt-2`, `mb-4`.
+
+### Typography Utilities:
+
+10. **`text-{color}`**:
+    - **Description**: Sets the text color.
+    - **Example**: `text-secondary`, `text-gray-600`, `text-primary`.
+
+11. **`text-lg`** / **`text-2xl`** / **`text-sm`**:
+    - **Description**: Sets the text size. Options include `text-lg` (large), `text-2xl` (extra-large), and `text-sm` (small).
+    - **Example**: `text-lg`, `text-2xl`, `text-sm`.
+
+12. **`font-bold`** / **`font-semibold`**:
+    - **Description**: Sets the font weight to bold (`font-bold`) or semi-bold (`font-semibold`).
+    - **Example**: `font-bold`, `font-semibold`.
+
+13. **`leading-6`**:
+    - **Description**: Sets line height (space between lines of text).
+    - **Example**: `leading-6`.
+
+### Background & Border Utilities:
+
+14. **`bg-gradient-to-r`** / **`bg-gray-100`**:
+    - **Description**: Sets a gradient background (`bg-gradient-to-r`) or a solid background color (`bg-gray-100`).
+    - **Example**: `bg-gradient-to-r from-gray-100 to-white`, `bg-gray-100`.
+
+15. **`rounded-lg`** / **`rounded-full`**:
+    - **Description**: Rounds the corners of an element. `rounded-lg` creates a large radius for rounded corners, while `rounded-full` creates fully circular corners.
+    - **Example**: `rounded-lg`, `rounded-full`.
+
+16. **`shadow-md`** / **`shadow-lg`**:
+    - **Description**: Applies shadow to an element, with options for medium (`shadow-md`) or large (`shadow-lg`) shadows.
+    - **Example**: `shadow-md`, `shadow-lg`.
+
+### Positioning Utilities:
+
+17. **`absolute`** / **`relative`**:
+    - **Description**: Positions an element relative to its nearest positioned ancestor (`relative`) or in an absolute position within its containing block (`absolute`).
+    - **Example**: `absolute`, `relative`.
+
+18. **`transform`** / **`-translate-x-1/2`** / **`-translate-y-1/2`**:
+    - **Description**: Used for transforming an element (e.g., positioning it with `translate-x` and `translate-y` for custom positioning).
+    - **Example**: `transform`, `-translate-x-1/2`, `-translate-y-1/2`.
+
+19. **`z-10`**:
+    - **Description**: Sets the stacking order of an element (how it layers on top of others). A higher value means the element will appear on top.
+    - **Example**: `z-10`.
+
+### Flexbox Alignment:
+
+20. **`text-center`** / **`text-left`**:
+    - **Description**: Aligns the text to the center or left of an element.
+    - **Example**: `text-center`, `text-left`.
+
+21. **`items-center`**:
+    - **Description**: Aligns items vertically to the center within a flex container.
+    - **Example**: `items-center`.
+
+### Miscellaneous Utilities:
+
+22. **`hover:text-{color}`** / **`hover:underline`**:
+    - **Description**: Adds hover effects to elements, such as changing text color (`hover:text-primary`) or underlining (`hover:underline`).
+    - **Example**: `hover:text-primary`, `hover:underline`.
+
+23. **`uppercase`**:
+    - **Description**: Transforms text to uppercase letters.
+    - **Example**: `uppercase`.
+
+24. **`opacity-{value}`**:
+    - **Description**: Sets the opacity (transparency) of an element.
+    - **Example**: `opacity-80`.
+
+---
+
+### Summary:
+
+- **Flex Layout**: `flex`, `flex-col`, `flex-row`, `items-center`, `justify-center`, `justify-between`
+- **Spacing**: `space-x-{value}`, `space-y-{value}`, `p-{value}`, `m-{value}`, `mt-{value}`
+- **Typography**: `text-{color}`, `text-sm`, `text-lg`, `font-bold`, `leading-6`
+- **Background & Borders**: `bg-{color}`, `bg-gradient-to-r`, `rounded-lg`, `shadow-md`
+- **Positioning**: `absolute`, `relative`, `transform`, `z-10`
+- **Text Alignment**: `text-center`, `text-left`
+- **Hover Effects**: `hover:text-{color}`, `hover:underline`
+  
+These Tailwind utilities help create responsive, flexible layouts with consistent spacing, typography, and interactive hover effects for a clean and modern design.
