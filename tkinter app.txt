@@ -1,0 +1,110 @@
+import tkinter as tk
+from tkinter import ttk, messagebox
+import re
+
+# EXO 1 ONLY ALPHABETICAL CHARACTERS 
+def is_alpha_string(string):
+    pattern = r'^[A-Za-z]+$'  # Allow spaces if needed
+    return "Only alphabets" if bool(re.fullmatch(pattern, string)) else "Contains non-alphabetic characters"
+
+# EXO 2 EXTRACTING ONLY DIGITS
+def find_digits(string):
+    pattern = r'\d+'
+    digits = re.findall(pattern, string)
+    return ', '.join(digits) if digits else "No digits found"
+
+
+# EXO 3 EXTRACTING EMAILS
+def extract_emails(string):
+    pattern = r'[a-zA-Z0-9._+%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+    emails = re.findall(pattern, string)
+    return ', '.join(emails) if emails else "No emails found"
+
+# EXO 4 VALIDATING DATES
+def validate_date(date):
+    # Regular expression to match valid dates in MM-DD-YYYY format
+    pattern = r'^(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[01])-(19|20)\d{2}$'
+    if re.match(pattern, date):
+        return "Valid date format"
+    return "Invalid date format"
+
+# EXO 5 CHECKS IF THE PASSWORD FORMAT IS VALID
+def validate_password(password):
+    # Check if all criteria are met
+    if (len(password) >= 8 and
+        re.search(r'[A-Z]', password) and    
+        re.search(r'[a-z]', password) and   
+        re.search(r'\d', password) and       
+        re.search(r'[!@#$%^&*]', password)): 
+        return "Valid Password"
+    else:
+        return "Invalid Password"
+    
+# EXO 6 EXTRACTING HASHTAGS
+def extract_hashtags(text):
+    # Regex to find hashtags
+    pattern = r'#\w+'
+    hashtags = re.findall(pattern, text)
+    return ', '.join(hashtags) if hashtags else "No hashtags found"
+
+# EXO 7 EXTRACTING CAPITALIZED WORDS
+def find_capitalized_words(text):
+    pattern = r'\b[A-Z][a-z]*\b|\b[A-Z]+\b'
+    capitalized_words = re.findall(pattern, text) 
+    return ', '.join(capitalized_words) if capitalized_words else "No capitalized words found"
+
+
+exercise_functions = {
+    "Only Alphabets": is_alpha_string,
+    "Extract Numbers": find_digits,
+    "Extract Emails": extract_emails,
+    "Validate Date (MM-DD-YYYY)": validate_date, 
+    "Validate Passwords": validate_password,
+    "Extract Hashtags": extract_hashtags,
+    "Extract Capitalized Words": find_capitalized_words,
+    
+}
+
+# Tkinter GUI
+def process_input():
+    input_text = input_field.get()
+    selected_exercise = exercise_selector.get()
+
+    if not input_text:
+        messagebox.showwarning("Input Error", "Please enter some text!")
+        return
+
+    if selected_exercise not in exercise_functions:
+        messagebox.showwarning("Selection Error", "Please select a valid exercise!")
+        return
+
+    # Process the input using the selected function
+    result = exercise_functions[selected_exercise](input_text)
+    result_label.config(text=f"Result: {result}")
+
+
+root = tk.Tk()
+root.title("Regex GUI Application")
+
+# Exercise dropdown selector
+tk.Label(root, text="Choose Exercise:").grid(row=1, column=0, padx=10, pady=10)
+exercise_selector = ttk.Combobox(root, values=list(exercise_functions.keys()), state="readonly")
+exercise_selector.grid(row=1, column=1, padx=10, pady=10)
+
+# Input field
+tk.Label(root, text="Enter text:").grid(row=0, column=0, padx=10, pady=10)
+input_field = tk.Entry(root, width=50)
+input_field.grid(row=0, column=1, padx=10, pady=10)
+
+
+# Process button
+process_button = tk.Button(root, text="Process", command=process_input)
+process_button.grid(row=2, column=0, columnspan=2, pady=20)
+
+# Result display
+result_label = tk.Label(root, text="Result: ", wraplength=400, justify="left")
+result_label.grid(row=3, column=0, columnspan=2, padx=10, pady=10)
+
+# Run the Tkinter main loop
+root.mainloop()
+
